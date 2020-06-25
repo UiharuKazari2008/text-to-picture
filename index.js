@@ -33,6 +33,11 @@ class TextToPicture {
     } else {
       const sizes = [8, 16, 32, 64, 128]
       const colors = ['black', 'white']
+
+      if (text.length > 500) {
+        size = 32
+      }
+
       if (!sizes.includes(size)) {
         throw new Error('size must be one of ' + sizes.join(',') + ' or use customFont (url to .fnt file)')
       }
@@ -46,8 +51,13 @@ class TextToPicture {
     font = await Jimp.loadFont(font)
 
     const height = (image.bitmap.height / 2) - (font.common.lineHeight / 2)
+    const width = (image.bitmap.width / 2)
 
-    image.print(font, 0, height, text, image.bitmap.width, Jimp.ALIGN_FONT_CENTER)
+    image.print(font, 50, height, {
+      text: text,
+      alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
+      alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE
+    }, image.bitmap.width - 100, Jimp.HORIZONTAL_ALIGN_CENTER)
 
     image.quality(quality)
 
