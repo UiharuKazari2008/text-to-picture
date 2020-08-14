@@ -7,14 +7,15 @@ const body = text.substring(0,400)
 require('./index').convert({
     text: body,
     source: "./tweet-bg.png",
+    size: 8,
     color: 'white',
 
 }).then(result => {
-    return result.getBase64()
+    return result.getBuffer()
 }).then(str => {
-    var base64Data = str.replace(/^data:image\/png;base64,/, "");
+    //var base64Data = str.replace(/^data:image\/png;base64,/, "");
 
-    require("fs").writeFile("out.png", base64Data, 'base64', function(err) {
+    require("fs").writeFile("out.png", str, function(err) {
         console.log(err);
     });
 })

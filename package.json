@@ -1,5 +1,5 @@
 {
-  "name": "text-to-picture",
+  "name": "text-to-picture-kazari",
   "version": "2.0.0",
   "description": "Simply generate a centered image from text.",
   "main": "index.js",
@@ -13,10 +13,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/steebchen/text-to-picture.git"
+    "url": "https://code.acr.moe/kazari/text-to-picture"
   },
   "bugs": {
-    "url": "https://github.com/steebchen/text-to-picture/issues"
+    "url": "https://code.acr.moe/kazari/text-to-picture/issues"
   },
   "engines": {
     "node": ">=8.0.0"
