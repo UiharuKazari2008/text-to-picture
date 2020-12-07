@@ -1,5 +1,7 @@
 # text-to-picture
 
+Whats differant from text-to-picture, this properly centers the text correctly and auto sizes if the text is going to overflow. This is used in the Kanmi Project to support oversized tweet text
+
 Easily convert characters to a picture with aligned text.
 
 Pure javascript, no native or external dependencies.
